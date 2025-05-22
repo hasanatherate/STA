@@ -1,0 +1,41 @@
+Okay, I can help you with that! Based on the images you sent, here's a summary of the steps:
+
+**Image 1 (IMG_5088.jpg) - Steps related to Genus/Synthesis:**
+
+1.  **Target window waveform:** (Right side) -> click name -> continue [double click]
+2.  Double click on black box.
+3.  Go back to terminal window.
+4.  Type `genus -gui`
+5.  Press enter -> it enters genus window [minimize]
+6.  `read_hdl [name/installs] read | slow.lib`
+7.  `elaborate`
+8.  `vi C` -> `ldc`
+9.  `read_ldc` `O.sdc`
+10. `synthesize -to-mapped`
+11. `report timing`
+12. `report area`
+13. `report power`
+
+**Image 2 (IMG_5087.jpg) - Steps related to NCsim/Simulation:**
+
+1.  **Compilation:**
+    * `ncrlog (?) .v -mess`
+    * `ncvlog .v -mess`
+    * `ncelab (module name) -mess`
+2.  **Simulation:**
+    * `ncsim (module name)`
+3.  **To get graphical interface (Simvision):**
+    * `nclaunch`
+    * Go to File -> Select Design directory.
+    * Select `out` directory -> create `edl.lib` -> save -> ok.
+    * Worklib -> right click -> delete previous compilation for both content.
+    * Select two files -> Tools [2nd icon].
+    * Elaboration [Only for testbench].
+    * Testbench -> [Tools 3rd icon] under worklib.
+    * Select testbench in snapshots -> Tools [4th icon].
+    * Simvision will open. Select testbench.
+
+**In short, the notes outline steps for:**
+
+* **VLSI Design Synthesis using a tool like Genus:** This involves reading design files (HDL, SDC, lib), elaborating the design, synthesizing it to a mapped netlist, and then generating reports for timing, area, and power.
+* **VLSI Simulation using a tool like NCsim/Simvision:** This includes compiling Verilog files, elaborating the design (especially the testbench), and then launching a simulation, possibly with a graphical interface (Simvision) to view waveforms and debug.
